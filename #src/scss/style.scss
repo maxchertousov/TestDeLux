@@ -1,0 +1,1131 @@
+// шрифты 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+// Шрифт по-умолчанию
+$font-family: 'Montserrat','Arial', sans-serif;
+// обнуление, общие параметры
+@import 'null.scss';
+// подключение слайдера
+@import 'slick.scss';
+// переменные цвета 
+$colorMainPage: #fff;
+$colorMain: #353738;
+$colorMainText: #000;
+$colorSecond: #6BC067;
+$colorTitle: rgba(32, 32, 32, 1);
+$colorUnits: rgba(84, 84, 84, 1);
+$colorItemInfrastructure: #fff;
+$colorPlan: #F6F6F6;
+$colorSchemeText: #202020;
+$colorFooterSection: #505050;
+$colorFooterText: #fff;
+
+
+
+body{ 
+  height: 100%; 
+  font-size: 16px; 
+  font-family: 'Montserrat','Arial', sans-serif; 
+}
+ // Оболочка
+.wrapper {
+  min-height: 700px;
+  width: 100%;
+  position: absolute;
+ /*  &_loaded {} */
+}
+
+.container {
+  max-width: 1292px;
+  padding: 0px 16px;
+  margin: 0px auto;
+}
+
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  img {
+    display: none;
+  }
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {  
+  &__row {
+    display: flex;
+    flex: 1 0 100%;
+    position: relative;
+  }
+}
+.column {
+    &__contacts {
+      flex: 0 1 90%;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    &__description {
+      position: absolute;
+      width: 488px;
+      height: 86px;
+      top: 400px;
+      left: 630px;
+    }
+}
+.contacts {
+  &__caption {  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+    font-size: 56px;
+    line-height: 58px;
+    height: 233px;
+    width: 575px;
+    margin-left: 155px;
+    margin-top: 64px;
+    letter-spacing: -0.01em;
+    color: $colorMainPage;
+  }
+  &__row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 44px;
+    margin-right: 78px;
+    color: $colorMainPage;
+  }
+  &__mail {
+    margin-right: 80px;
+    font-weight: 600;
+  }
+  &__tel {
+    font-weight: 400;
+  }
+}
+.description {  
+  &__text {
+    display: flex;
+    text-align: justify;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: right;
+    letter-spacing: -0.01em;
+    color: $colorMainPage;    
+  }
+  &__link {
+    width: 154px;
+    height: 18px;
+    margin-top: 59px;
+    margin-left: 233px;
+    a {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: -0.01em;
+      color:$colorMainPage;
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 50px;
+        height: 14px;
+        top: 140px;
+        margin: 0px 0px 0px -230px;
+        background-image: url('/img/main_page/vector.png');
+      }
+    }    
+  }
+}
+.column {
+  &__header {
+    flex: 0 1 10%;
+  }
+}
+.header {
+  background-color: $colorMainPage;
+  &__row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  &__logo {
+    margin-top: 32px;
+    margin-left: 81px;
+    margin-right: 24px;    
+  }
+}
+.logo {
+  &__label {
+      position: absolute;
+      width: 85px;
+      height: 15px;
+      left: 96px;
+      top: 88px;
+      font-size: 10px;
+      line-height: 15px;
+    }
+}
+.menu {
+  &__body {
+    margin-top: 72px;  
+  }
+  ul li {
+    list-style: none;
+    position: relative;
+    display: flex;
+    text-align: left;
+    padding-left: 116px;
+    margin-top: 28px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    color: $colorMainText;
+    &::before {
+      content: "";
+      display: flex;
+      z-index: 2;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      align-items: center;
+      padding: 0px;
+      width: 10px;
+      height: 10px;
+      top: -12px;
+      left: 90px;
+      color: $colorSecond;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::before {
+        content: "0"+$i;
+      }
+    }
+  }
+  &__link {    
+    color: $colorMainText;
+  }
+
+}
+.booklet {
+  position: relative;
+  &__image {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    left: 50px;
+    top: 486px;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  &__download {
+    position: absolute;
+    width: 108px;
+    height: 41px;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+    top: 630px;
+    left: 265px;
+    z-index: 10;
+    a {
+      color:$colorMainText;
+    }    
+  }
+}
+//////////////// секция О посёлке
+.leadIn {
+  position: relative;
+  &__row {
+    display: flex;
+    margin-top: 58px;
+  }
+  &__casing {
+    margin: 0px 87px 0px 116px;
+  }
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+  &__bottom {    
+    display: flex;
+    padding: 0px 60px 0px 40px;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+}
+
+.equal {
+  flex: 0 1 50%;
+}
+
+.casing {
+  &__paragraph {
+    margin-top: 42px;
+    margin-bottom: 40px;
+    line-height: 25px;
+  }
+  &__link { 
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 50px;
+      height: 14px;
+      margin: -15px 0px 0px 171px;
+      background-image: url('/img/leadIn/vectorGreen.png');
+    }
+    a {
+      color: $colorSecond;
+      font-weight: 500;
+    }    
+  }
+}
+
+.title {
+  font-size: 58px;
+  color: $colorTitle;
+  span {
+    font-weight: 700;
+  }
+}
+
+.bottom {
+  &__text {
+    position: absolute;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  &__image {
+    padding: 30px 0px;        
+  }
+  &__unit {
+    position: absolute;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 44px;
+    margin-top: 69px;    
+    color: $colorUnits;
+    &_sup {
+        position: absolute;
+        margin-top: -15px;
+        font-size: 20px;
+      }
+    }
+}
+////////////// секция о истории
+.history {  
+  position: relative;
+  margin-top: 45px;
+  &__row {
+    display: flex;
+  }
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  &__casing {
+    margin: 79px 141px 48px 52px;
+  }
+
+  &__title {
+      font-size: 42px;
+      color: $colorTitle;
+      span {
+        font-weight: 700;
+      }
+  }
+  &__paragraph {
+    margin-top: 50px;
+    font-size: 14px;
+    line-height: 21.33px;
+    p:nth-child(n+1) {
+      margin-top: 20px;
+    }
+  }
+  &__link {
+    margin-top: 80px;
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 50px;
+      height: 14px;
+      margin: -15px 0px 0px 190px;
+      background-image: url('/img/leadIn/vectorGreen.png');
+    }
+    a {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      color: $colorSecond;
+    }
+  }
+}
+///////////// секция инфраструктура
+.infrastructure {
+  width: 100%;
+  background: url('/img/infrastructure/infrastructure__bg.png') 0 0/cover no-repeat;
+  &__title {
+    margin-top: 107px;
+    margin-left: 110px;
+  }
+  &__switch {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;    
+  }
+  &__elements {
+    text-align: center;
+  }  
+  &__items {
+    justify-content: center;
+  }
+  &__row {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 52px;
+  }
+  &__item {
+    display: flex;
+    margin-left: 24px;
+    margin-top: 24px;
+    margin-bottom: 113px;
+    border-radius: 12px;
+    padding: 7px;
+    width: 159px;
+    height: 152px;
+    background-color: $colorItemInfrastructure;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.11);
+    &:first-child {
+      margin-left: 0;
+    }
+    img {
+      width: 40px;
+    }
+  }
+}
+.switch {
+  &__list {
+    display: flex;
+    align-items:center;
+  }
+  &__link {    
+    padding: 20px 75px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.33);
+    font-weight: 500;
+    line-height: 17px;
+    &_active {
+      border-bottom: 1px solid #000;
+    }
+  }
+}
+.item {
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+    margin: auto;
+  }
+  &__image {
+    margin-bottom: 30px;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+  }
+}
+/////////////////// секция speech 
+.speech {
+  min-height: 310px;
+  background: $colorSecond;
+  &__row {
+    display: flex;
+    align-items:center;
+    height: 100%; 
+  }
+  &__column {    
+    flex: 0 1 57%;
+    &_logo {
+      flex: 0 1 43%;
+      display: flex;
+      justify-content: end;
+    }
+  }
+}
+.column {
+  &__image {
+    margin-right: 88px;
+  }
+  &__text {
+    width: 578px;
+    height: 150px;
+    padding-right: 25px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 32px;
+    color: $colorMainPage;
+    span {
+      font-weight: 800;
+    }
+  }
+}
+//////////////////// секция ген. плана
+.plan {
+  background-color: $colorPlan;
+  &__row {
+    position: relative;
+  }
+  &__block {
+    position: absolute;
+    margin-top: 59px;
+    left: 737px;
+  }
+  &__map {
+    height: 700px;
+    margin-left: 8%;
+    background: url('/img/plan/map.png') 0 0/contain no-repeat;
+  }
+  &__compass {
+    position: absolute;
+    margin-left: 900px;
+    margin-top: 443px;
+  }
+}
+.block {
+  &__title {
+    font-size: 56px;
+  }
+}
+/////////////////// секция схема проезда
+.schema {
+  position: relative;
+  &__row {
+    display: flex;
+  }
+  &__casing {
+    margin: 49px 42px 67px 115px;
+  }
+  &__distance {
+    text-align: center;
+  }
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+}
+.casing {
+  &__paragraph {
+    font-weight: 500;
+    line-height: 24px;
+    p:nth-child(n+1) {
+      margin-top: 30px;
+    }
+    color:$colorSchemeText;
+  }
+}
+
+.distance {
+  width: 178px;
+  height: 181px;
+  &__number {
+    span {
+      font-weight: 800;
+      font-size: 148px;
+      line-height: 180px;
+      color: $colorSecond;
+    }    
+  }
+  &__text {
+    margin-top: -25px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+  }
+}
+/////////////////// секция ссылка
+.link {
+  display: none;
+}
+
+/////////////////// секция подвала
+.footer {
+  background-color: $colorFooterSection;
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    min-height: 171px;
+  }
+  &__list {
+    display: inline-flex;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    li:nth-child(n) {
+      margin-left: 48px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  &__mail {
+    margin-top: 5px;
+  }
+  &__link {
+    color: $colorFooterText;
+  }
+  &__communications {
+    a {
+      color: $colorFooterText;
+    }
+  }
+  ul li {
+    margin-top: 10px;
+  }
+}
+
+.communications {
+  &__tel {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  &__mail {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+////////////////// адаптив под 375px
+
+@media (max-width: 376px){
+  body.lock {
+    overflow: hidden;
+  }
+  .menu {
+    
+    &__body {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      padding: 90px 0px 0px 0px;
+      transform: translate3d(0px, -100%, 0px);
+      transition: all 0.3s ease 0s;
+      margin-top: 0;
+      z-index: 11;
+      &.active {
+        transform: translate3d(0px, 0%, 0px);
+      }
+    }
+    &__list {
+      li {
+        padding: 0 0 15px 0;
+      }
+    }
+    &__link {
+      font-size: 20px;
+      color: #000;
+      padding-left:0px;
+    }
+  }
+  ///// адаптив главного экрана
+  .main {
+    &__row {
+      display: flex;
+      flex: 1 1 100%;
+      position: relative;
+      flex-direction: column;
+    }
+  }
+  .column {
+    &__contacts {
+      flex: 0 1 80%;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;      
+    }
+    &__description {
+      flex: 1 0 10%;
+      position: relative;
+      height: 192px;
+      top: 0px;
+      left: 0px;
+      background-color: $colorSecond;
+    }
+  }
+  .description {
+    &__text {
+      display: flex;
+      width: 343px;
+      height: 96px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: left;
+      letter-spacing: -0.01em;
+      margin: 24px 16px 32px 16px;
+      color: $colorMainPage;
+    }
+    &__link {
+      width: 100%;
+      height: 100%;
+      margin-top: 32px;
+      margin-left: 16px;
+      margin-bottom: 24px;
+      a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 14px;
+        letter-spacing: -0.01em;
+        color: $colorMainPage;
+        &::before {
+          content: "";
+          display: block;
+          width: 50px;
+          height: 14px;
+          top: 140px;
+          margin: 12px 0px 0px 175px;
+          background-image: url('/img/main_page/vector.png');
+        }
+      }
+    }
+  }
+  .header {
+    &__row {
+      width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 13;
+    }
+    &__logo {
+      text-align: left;
+      align-items:center;
+      margin-top: 13px;
+      margin-left: 16px;
+      img {
+        width: 230px;
+        height: 52px;
+      }
+    }
+    &__booklet {
+      display: none;
+    }
+  }
+  .logo {
+    &__label {       
+        position: absolute;
+        width: 65px;
+        height: 6px;
+        left: 29px;
+        top: 57px;
+        font-size: 7px;
+        line-height: 15px;
+    }
+  }
+  .contacts {
+    &__row {
+      display: none;
+    }
+    &__caption {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: right;
+      font-size: 32px;
+      line-height: 33px;
+      height: 133px;
+      width: 320px;
+      margin-left: 40px;
+      margin-top: 35px;
+      margin-bottom: 89px;
+      letter-spacing: -0.01em;
+      color: $colorMainPage;
+    }
+  }
+  ////// адаптив секция О посёлке
+  .leadIn {
+    &__column {
+      &:nth-child(1) {
+        flex: 1 0 100%;
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+    &__row {
+      margin-top: 0px;
+    }
+
+    &__casing {
+      margin: 40px 16px 48px 16px;
+    }
+    &__bottom {
+      flex-direction: column;
+      padding: 0px 16px;
+      justify-content: center;
+      margin-top: 0px;
+    }
+  }
+  .casing {
+    &__title {
+      font-size: 28px;
+    }
+    &__paragraph {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 22px;
+    }    
+  }
+  .bottom {
+    &__text {
+      position: absolute;
+    }
+    &__image {
+      padding: 40px 0px;
+    }
+  }
+///////// адаптив секция истории
+  .history {
+    margin-top: 0px;
+    &__row {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    &__image {
+      display: block;
+      width: 100%;
+      height: 238px;
+      top: 0;
+      left: 0;
+    }
+    &__casing {
+      margin: 24px 16px 24px 16px;
+    }
+    &__title {
+      position: absolute;
+      font-size: 28px;
+      line-height: 38px;
+      color: $colorMainPage;
+      margin-top: -240px;      
+      width: 343px;
+      height: 190px;
+    }
+    &__paragraph {
+      margin-top: 24px;
+      font-size: 14px;
+      line-height: 21.33px;
+      p:nth-child(n+1) {
+        margin-top: 20px;
+      }
+    }
+    &__link {
+      margin-top: 24px;
+      margin-bottom: 22px;
+    }
+  }
+///////// адаптив секции инфраструктура
+  .infrastructure {
+    width: 100%;
+    background: none;
+    &__block {
+      margin-top: 48px;
+    }
+    &__title {
+      font-size: 28px;
+      line-height: 28px;
+      margin-top: 0px;
+      margin-left: 16px;
+    }
+    &__switch {
+      margin-top: 24px;
+    }
+    &__elements {
+      text-align: center;
+    }
+    &__items {
+      justify-content: center;
+    }
+    &__row {      
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 24px 16px 16px 16px;
+    }
+    &__item {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 24px;
+      border-radius: 12px;
+      &:nth-child(odd) {
+        margin-right: 12.5px;
+      }
+      &:nth-child(even) {
+        margin-left: 12.5px;
+      }
+    }
+  }
+////////// адаптив секции speech
+  .speech {
+    min-height: 237px;
+    &__row {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    &__column {
+      flex: 1 0 80%;
+      &_logo {
+        flex: 1 0 20%;
+        display: flex;
+        align-items:center;
+        margin-top: 24px;
+      }
+    }
+  }
+  .column {
+    &__image {
+      text-align: left;
+    }
+    &__text {
+      width: 343px;
+      height: 132px;
+      padding-right: 10px;
+      margin-top: 13px;
+      margin-bottom: 5px;
+      text-align: left;
+      font-size: 14px;
+      line-height: 22px;
+      color: $colorMainPage;
+    }
+  }
+  ///////// адаптив секции ген. плана
+  .plan {
+    min-height: 316px;
+    &__row {
+      position: relative;
+    }
+    &__block {
+      position: relative;
+      margin: 24px 0px 24px 16px;
+      left: 0px;
+    }
+    &__map {
+      height: 240px;
+      margin-left: 16px;
+      background: url('/img/plan/map.png') 0 0/contain no-repeat;
+    }
+    &__compass {
+      position: absolute;
+      margin-left: 265px;
+      top: -440px;
+    }    
+  }
+  .block {
+    &__title {
+      font-size: 28px;
+    }
+  }
+  .compass {
+    &__image {
+      width: 85px;
+      height: 89px;
+    }
+  }
+  //////// адаптив секции схемы проезда
+  .schema {
+    &__row {
+      display: flex;
+      flex-direction: column;
+    }
+    &__casing {
+      margin: 24px 16px;
+    }
+    &__distance {
+      text-align: center;
+    }
+    &__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      height: 340px;
+      top: 0;
+      right: 0;
+    }
+  }
+  .casing {
+    &__title {
+      font-size: 28px;
+    }
+    &__paragraph {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 24px;
+      margin-bottom: 0;
+      p:nth-child(n+1) {
+        margin-top: 20px;
+      }
+    }
+  }
+  .distance {
+    width: 178px;
+    height: 181px;
+    &__number {
+      span {
+        font-weight: 800;
+        font-size: 148px;
+        line-height: 180px;
+        color: $colorSecond;
+      }
+    }
+    &__text {
+      margin-top: -25px;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 700;
+    }
+  }
+  ////////// адаптив секции ссылка
+  .link {
+    display:block;    
+    &__block {
+      height: 50px;      
+      a {
+        margin-left: 16px;
+        color: $colorSecond;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;        
+      }
+    }    
+  }  
+  /////// адаптив секции подвал
+  .footer {
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      min-height: 411px;
+    }
+    &__logo {
+      margin: 24px 54px 0px 54px;
+    }
+    &__list {
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 14px;
+      line-height: 14px;
+      align-items: center;
+      li:nth-child(n) {
+        margin-top: 32px;
+        margin-left: 0;
+      }
+    }
+    &__communications { 
+      margin-bottom: 40px; 
+      margin-top: 20px;    
+    }
+  }
+
+  .communications {
+    margin-bottom: 40px;
+    &__tel {
+      font-size: 20px;
+      line-height: 20px;
+    }
+    &__mail {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 18px;
+    }
+  }
+  .footer ul li {
+    margin-top: 16px;
+  }
+}
+
+.icon-menu {
+  @media (max-width: 376px) {    
+    display: block;
+    position: absolute;
+    top: 32px;
+    right: 15px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    z-index: 20;
+    span {
+      background-color: #000;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      top: 8px;
+      transition: all 0.3s ease 0s;
+      &:first-child {
+        top: 0px;
+      }
+      &:last-child {
+        top: auto;
+        bottom: 0px;
+      }
+    }
+    &.active {
+      color: #000;
+      span {
+        transform: scale(0);
+        &:first-child {
+          transform: rotate(-45deg);
+          top: 8px;
+        }
+        &:last-child {
+          transform: rotate(45deg);
+          bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
